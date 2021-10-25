@@ -1,24 +1,28 @@
 #include<stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
 
 int main()
 {
-    float x,y;
+    float x, y;
     char a;
-    scanf("%f %c %f",&x,&a,&y);
-    if(a!='+' && a!='-' && a!='*' && a!='/')
+    scanf("%f %c %f", &x, &a, &y);
+    if (a != '+' && a != '-' && a != '*' && a != '/')
     {
-        printf("Invalid operator!");
+        printf("Invalid operator!\n");
     }
     else
     {
-        if(a=='+') printf("%f",x+y);
-        if(a=='-') printf("%f",x-y);
-        if(a=='*') printf("%f",x*y);
-        if(a=='/' && y==0)  
+        if (a == '+') printf("%f\n", x + y);
+        if (a == '-') printf("%f\n", x - y);
+        if (a == '*') printf("%f\n", x * y);
+        while (a == '/')
         {
-            printf("Divided by zero!");
-        } 
-        else printf("%f",x/y);
+            if (y = 0)
+                printf("Divided by zero!\n");
+            else
+                printf("%f\n", x / y);
+        }
+        
     }
     return 0;
 }
